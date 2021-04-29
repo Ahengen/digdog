@@ -1,0 +1,27 @@
+body
+{
+    background-image: url("grass.jpg");
+    background-size: 150%;
+
+}
+span
+{
+    display: inline-block;
+    height: 130px;
+    width: 130px;
+    background-color: forestgreen;
+    border: 1px white solid;
+}
+.surprise
+{
+    background-image: url("bone.jpg");
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: center;
+}
+
+.dug
+{
+    background-color: saddlebrown;
+}
+
