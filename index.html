@@ -7,31 +7,17 @@
     <title>Dig Dog</title>
 </head>
 <body>
+<h1>Dig Dog!</h1>
 <p></p>
 
-<div class = "gauge">
-    <div class = "gauge_body">
-        <div class="gauge_fill">
-            <div class="gauge_cover">50%</div>
-
-        </div>
-
+<div class="gauge">
+    <div class="gauge_body">
+        <div class="gauge_fill"></div>
+            <div class="gauge_cover"></div>
     </div>
 </div>
 
-<script>
-    const gaugeElement = document.querySelector(".gauge");
 
-    function setGaugeValue(gauge, value){
-        if (value < 0 || value > 1) {
-            return;
-        }
-        gauge.querySelector("gauge_fill").style.transform = `rotate(${value/2}turn)`;
-        gauge.querySelector(".gauge_cover").textContent = `${Math.round(value * 100)}%`;
-    }
-
-    setGaugeValue(gaugeElement, 0.3);
-</script>
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="code.js"></script>
 <link rel="stylesheet" href="style.css">
