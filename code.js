@@ -9,10 +9,10 @@ for(let row = 0; row < NUM_BONES; row++)
     {
         let newSpan = $("<span>");
         newSpan.attr("id", num);
-        $("p").append(newSpan);
+        $("p#yard").append(newSpan);
         num++;
     }
-    $("p").append("<br>")
+    $("p#yard").append("<br>")
 }
 for (let i = 0; i < NUM_BONES; i++) {
     let n = Math.trunc(Math.random() * (num));
@@ -30,12 +30,18 @@ let gauge_value = 0.0;
 
 
 $("span.bone").on("click", function() {
+    let niceGreeting = "You have found all of the bones, good doggo!";
    $(this).addClass("surprise");
     clicked_bones++;
     if (clicked_bones >= NUM_BONES) {
-        console.log("You have found all of the bones, good doggo!")
+        console.log(niceGreeting)
+        $("span").off("click");
+        $("#output").text(`${niceGreeting}`);
+        $(".output").show();
     }
 });
+
+
 
 $("span").on("click", function() {
     $(this).addClass("dug");
@@ -47,7 +53,11 @@ $("span").on("click", function() {
     gauge_value += randnum;
     setGaugeValue(gaugeElement, gauge_value);
     if (gauge_value >= 1) {
-        console.log("Oh no! Too many holes!")
+        let sadGreeting = "Oh no! Too many holes!";
+        console.log(sadGreeting);
+        $("span").off("click");
+        $("#output").text(`${sadGreeting}`);
+        $(".output").show();
     }
 });
 
