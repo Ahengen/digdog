@@ -33,6 +33,7 @@ $("span.bone").on("click", function() {
     let niceGreeting = "You have found all of the bones, good doggo!";
    $(this).addClass("surprise");
     clicked_bones++;
+    $("#updatedBones").text(NUM_BONES - clicked_bones + " " + "bones left!");
     if (clicked_bones >= NUM_BONES) {
         console.log(niceGreeting)
         $("span").off("click");
